@@ -1,0 +1,140 @@
+.board {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    height: var(--header-height);
+    background: rgba(0, 0, 0, 0.24);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    padding: 0 var(--spacing-lg);
+    flex-shrink: 0;
+}
+
+.boardTitle {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-on-board);
+    margin: 0;
+    cursor: pointer;
+    padding: 0 var(--spacing-sm);
+    border-radius: var(--radius-sm);
+}
+
+.boardTitle:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.listsContainer {
+    flex: 1;
+    display: flex;
+    gap: var(--spacing-md);
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: var(--spacing-md);
+    align-items: flex-start;
+    /* Custom scrollbar for horizontal scroll */
+    scrollbar-color: rgba(255, 255, 255, 0.4) rgba(0, 0, 0, 0.15);
+    scrollbar-width: auto;
+}
+
+.listsContainer::-webkit-scrollbar {
+    height: 12px;
+}
+
+.listsContainer::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: var(--radius-sm);
+    margin: var(--spacing-md);
+}
+
+.listsContainer::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: var(--radius-sm);
+}
+
+.addListBtn {
+    background: rgba(255, 255, 255, 0.24);
+    color: var(--text-on-board);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    font-size: 0.95rem;
+    font-weight: 500;
+    min-width: 272px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.addListBtn:hover {
+    background: rgba(255, 255, 255, 0.32);
+}
+
+.addListForm {
+    background: var(--bg-list);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-sm);
+    min-width: 272px;
+    box-shadow: var(--shadow-md);
+}
+
+.input {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.95rem;
+    border: 2px solid var(--primary);
+    background: white;
+}
+
+.formActions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.addBtn {
+    background: var(--primary);
+    color: white;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.addBtn:hover {
+    background: var(--primary-dark);
+}
+
+.cancelBtn {
+    background: transparent;
+    color: var(--text-secondary);
+    padding: 6px;
+    border-radius: var(--radius-sm);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cancelBtn:hover {
+    background: rgba(9, 30, 66, 0.08);
+    color: var(--text-primary);
+}
+
+.dragOverlay {
+    cursor: grabbing !important;
+    transform: rotate(4deg);
+    width: 272px;
+}
+
+.dragOverlay>div {
+    box-shadow: 0 12px 24px -6px rgba(9, 30, 66, 0.25), 0 0 0 1px rgba(9, 30, 66, 0.08);
+}
