@@ -23,7 +23,6 @@ COPY . .
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
-# Build the application
 RUN npm run build
 
 # Stage 3: Production runtime

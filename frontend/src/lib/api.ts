@@ -1,6 +1,6 @@
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL
     ? `${process.env.NEXT_PUBLIC_API_URL}/api`
-    : 'http://localhost:8080/api';
+    : '/api';  // Use relative URL - nginx will proxy to backend
 
 export const api = {
     // Board operations
