@@ -46,13 +46,23 @@ services:
       dockerfile: Dockerfile
     container_name: trello-nginx
     ports:
-      - "80:80"
+      - "7070:80"
     depends_on:
       - frontend
       - backend
     networks:
       - trello-network
     restart: unless-stopped
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: trello-cloudflared
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_TOKEN}
+    depends_on:
+      - nginx
+    networks:
+      - trello-network
 
 networks:
   trello-network:

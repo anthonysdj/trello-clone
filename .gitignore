@@ -1,4 +1,8 @@
 .DS_Store
 docs/
 AI/
-.env.example
+
+# Environment files (keep .env.example for reference)
+.env
+.env.local
+.env.*.local
